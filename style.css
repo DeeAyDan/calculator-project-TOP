@@ -1,0 +1,95 @@
+body {
+    background-image: linear-gradient(135deg, #1a1a1a, #3a3a3a, #7e2929);
+}
+#calculator{
+    background-color: cornsilk;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    border-top-width: 10px;
+    border-top-style: solid;
+    border-left-width: 10px;
+    border-bottom-width: 10px;
+    border-bottom-style: solid;
+    border-right-width: 10px;
+    border-right-style: solid;
+    border-left-style: solid;
+    background-image: linear-gradient(135deg, #3e3e3e, #737371, #b03939);
+    width: 420px;
+}
+
+#screen{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: end;
+}
+
+#para{
+    height: 50px;
+    border-top-style: solid;
+    border-top-width: 8px;
+    border-left-width: 8px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-bottom-style: solid;
+    border-right-color: gray;
+    border-bottom-color: gray;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 16px;
+    padding-top: 40px;
+    background-color: rgb(110, 107, 103);
+    padding-right: 5%;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#controls{
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: repeat(5, 75px);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 6%;
+    justify-content: center;
+}
+
+#buttonResult{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.button{
+    background-image: linear-gradient(135deg, #727171, #b36969);
+    border: #9c9c99;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-top-width: 4px;
+    border-top-style: solid;
+    border-right-width: 4px;
+    border-right-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-top-color: #797976;
+    border-left-color: #797976;
+    font-size: 30px;
+    font-weight: bold; 
+    transition: all, 0.1s;
+    transition-timing-function: ease-out;
+}
+
+.button:active{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
