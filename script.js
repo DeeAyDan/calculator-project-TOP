@@ -1,19 +1,21 @@
 function add(a, b){
-    return (a + b).toFixed(3);
+    return Math.round((a + b)*1000)/1000;
 };
 
 function sub(a, b){
-    return (a - b).toFixed(3);
+    return Math.round((a - b)*1000)/1000;
 };
 
 function multiply(a, b){
-    return (a * b).toFixed(3);
+    return Math.round((a * b)*1000)/1000;
 };
 
 function divide(a, b){
-    return (a / b).toFixed(3);
+    if(b === 0){
+        return 'Stop right there criminal!';
+    }
+    return Math.round((a / b)*1000)/1000;
 };
-
 function factorialize(num) {
     if (num < 0) 
           return -1;
@@ -62,8 +64,17 @@ const buttons = document.querySelectorAll('button');
 const para = document.querySelector('#para');
 let displayContent;
 let chosenOperator;
+let itIsTheResult = 0;
 buttons.forEach((button) =>{
     button.addEventListener('click', () =>{
+
+            if(itIsTheResult === 1){
+                displayContent = '';
+                para.textContent = '';
+                para.textContent = button.textContent;
+                itIsTheResult = 0;
+                return;
+            }
             if (button.textContent === '+'){
                 displayContent = Number(para.textContent);
                 chosenOperator = button.textContent;
@@ -107,6 +118,7 @@ buttons.forEach((button) =>{
                 return;
             }
             else if (button.textContent === '='){
+                itIsTheResult = 1;
                 let secondNumber = Number(para.textContent);
                 para.textContent = operate(displayContent, chosenOperator, secondNumber);
                 return;
