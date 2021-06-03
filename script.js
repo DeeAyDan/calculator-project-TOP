@@ -57,38 +57,46 @@ const para = document.querySelector('#para');
 let displayContent;
 let chosenOperator;
 let itIsTheResult = 0;
+let isSecondNumber = 0;
 buttons.forEach((button) =>{
     button.addEventListener('click', () =>{
-
-            if(itIsTheResult === 1){
-                displayContent = '';
-                para.textContent = '';
-                para.textContent = button.textContent;
-                itIsTheResult = 0;
-                return;
-            }
+        if(itIsTheResult === 1){
+            displayContent = Number(para.textContent);
+            para.textContent = '';
+            para.textContent = button.textContent;
+            itIsTheResult = 0;
+            return;
+        }
+        else if (isSecondNumber === 1){
+            para.textContent = '';
+            isSecondNumber = 0;
+        }
             if (button.textContent === '+'){
                 displayContent = Number(para.textContent);
                 chosenOperator = button.textContent;
-                para.textContent = '';
+                para.textContent += ' ' + button.textContent;
+                isSecondNumber = 1;
                 return;
             }
             else if (button.textContent === '-'){
                 displayContent = Number(para.textContent);
                 chosenOperator = button.textContent;
-                para.textContent = '';
+                para.textContent += ' ' + button.textContent;
+                isSecondNumber = 1;
                 return;
             }
             else if (button.textContent === '*'){
                 displayContent = Number(para.textContent);
                 chosenOperator = button.textContent;
-                para.textContent = '';
+                para.textContent += ' ' + button.textContent;
+                isSecondNumber = 1;
                 return;
             }
             else if (button.textContent === '/'){
                 displayContent = Number(para.textContent);
                 chosenOperator = button.textContent;
-                para.textContent = '';
+                para.textContent += ' ' + button.textContent;
+                isSecondNumber = 1;
                 return;
             }
             else if (button.textContent === 'Fib'){
@@ -117,6 +125,9 @@ buttons.forEach((button) =>{
                 para.textContent = operate(displayContent, chosenOperator, secondNumber);
                 return;
             }
-                para.textContent += button.textContent;
+                else{
+                    return  para.textContent += button.textContent;
+                }
+                
     })
 })
