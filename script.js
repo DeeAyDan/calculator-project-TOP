@@ -16,15 +16,6 @@ function divide(a, b){
     }
     return Math.round((a / b)*1000)/1000;
 };
-function factorialize(num) {
-    if (num < 0) 
-          return -1;
-    else if (num == 0) 
-        return 1;
-    else {
-        return (num * factorialize(num - 1));
-    }
-  }
   function fibonacci(number){
     let n1 = 0, n2 = 1, nextTerm;
     for (let i = 1; i <= number; i++) {
@@ -34,6 +25,7 @@ function factorialize(num) {
     }
     return n2;
   }
+
 
 function operate(number1, operator, number2 = 0){
     switch(operator){
@@ -105,10 +97,12 @@ buttons.forEach((button) =>{
                 para.textContent = operate(displayContent, chosenOperator);
                 return;
             }
-            else if (button.textContent === 'X!'){
-                chosenOperator = button.textContent;
-                displayContent = Number(para.textContent);
-                para.textContent = operate(displayContent, chosenOperator);
+            else if (button.textContent === 'U'){
+                let tempPara = para.textContent;
+                para.textContent = '';
+                for(i = 0; i < tempPara.length - 1; i++){
+                    para.textContent += tempPara[i];
+                }
                 return;
             }
             else if (button.textContent === 'C'){
